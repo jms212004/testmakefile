@@ -1,6 +1,6 @@
 
 <?php
-$to = "jean-michel.soler@laposte.net";
+$to = "jms@yopmail.com";
 $subject = "This is a test HTML email";
 
 $message = "
