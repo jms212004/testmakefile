@@ -1,0 +1,43 @@
+{
+    "name": "jms212004/testmakefile",
+    "version": "0.1.1",
+    "description": "Tests wit makefile",
+    "keywords": [
+        "jms212004",
+        "makefile",
+	"php",
+	"tests"
+    ],
+    "homepage": "https://github.com/jms212004/testmakefile",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jms",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "phpcompatibility/php-compatibility": "*",
+        "phpunit/phpunit": "^9.0",
+        "phpstan/phpstan": "*",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "jms212004\\testmakefile\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "jms212004\\test\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility",
+        "post-update-cmd" : "\"vendor/bin/phpcs\" --config-set installed_paths vendor/phpcompatibility/php-compatibility"
+    }
+}
