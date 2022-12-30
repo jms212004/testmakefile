@@ -26,7 +26,7 @@ class DeduplicationTest extends TestCase
     public function testDeduplicationIsNotValid()
     {
         // Call function detectedDuplication
-       $deduplicated = (new Deduplication)->detectedDuplication($this->peopleDuplicated);
+        $deduplicated = (new Deduplication())->detectedDuplication($this->peopleDuplicated);
 
         // verify that the number of people in the result array is not equal to the number of people in the
         // original array.
@@ -35,14 +35,14 @@ class DeduplicationTest extends TestCase
 
         // Verify that each person in the result array isn't present in the original array.
         foreach ($deduplicated as $person) {
-            $this->assertContains($person, $this->peopleDuplicated,"doesn't  contains value as value");
+            $this->assertContains($person, $this->peopleDuplicated, "doesn't  contains value as value");
         }
     }
 
     public function testDeduplicationIsValid()
     {
         // Call function detectedDuplication
-        $deduplicated = (new Deduplication)->detectedDuplication($this->peopleDontDuplicated);
+        $deduplicated = (new Deduplication())->detectedDuplication($this->peopleDontDuplicated);
 
         // Verify that the number of people in the result array is equal to the number of unique people in the
         // original array.
@@ -50,7 +50,7 @@ class DeduplicationTest extends TestCase
 
         // Verify that each person in the result array is present in the original array.
         foreach ($deduplicated as $person) {
-            $this->assertContains($person, $this->peopleDontDuplicated,"contains value as value");
+            $this->assertContains($person, $this->peopleDontDuplicated, "contains value as value");
         }
     }
 }
