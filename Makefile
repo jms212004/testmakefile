@@ -11,12 +11,13 @@ coverage: ## Execute phpunit showing coverage
 	vendor/bin/phpunit --coverage-text
 
 test: ## Execute phpunit
-	vendor/bin/phpunit --testdox
+	vendor/bin/phpunit tests/
 
 phpstan: ## Execute phpstan from phpstan.neon
 	vendor/bin/phpstan analyse src tests
 
 phpcs: ## Execute PhpCS with PSR12 standard on src directory
+	clear
 	vendor/bin/phpcs --standard=PSR12 src tests
 
 compatibility: ## Execute PhpCS compatibility php version 8.2
