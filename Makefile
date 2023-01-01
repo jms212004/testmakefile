@@ -12,6 +12,7 @@ test: ## Execute phpunit
 
 phpcpd: ## Execute phpcpd Copy/Paste Detector (CPD) for PHP code
 	vendor/bin/phpcpd src tests
+
 phpstan: ## Execute phpstan on  src and tests directorys
 	vendor/bin/phpstan analyse src tests
 
@@ -25,4 +26,4 @@ compatibility: ## Execute PhpCS compatibility php version 8.2
 fixpsr12: ## Fix style for PSR12 standard on src directory
 	vendor/bin/phpcbf --standard=PSR12 src tests
 
-allcheck: phpcs phpstan test compatibility ## Perform all check: phpcs, phpstan and test
+allcheck: phpcpd phpcs phpstan test compatibility ## Perform all check: phpcpd, phpcs, phpstan and test
