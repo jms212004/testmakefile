@@ -10,7 +10,9 @@ help:	## Show this help (default).
 test: ## Execute phpunit
 	vendor/bin/phpunit tests/
 
-phpstan: ## Execute phpstan from phpstan.neon
+phpcpd: ## Execute phpcpd Copy/Paste Detector (CPD) for PHP code
+	vendor/bin/phpcpd src tests
+phpstan: ## Execute phpstan on  src and tests directorys
 	vendor/bin/phpstan analyse src tests
 
 phpcs: ## Execute PhpCS with PSR12 standard on src directory
